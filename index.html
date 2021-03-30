@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brajanair zarezerwuj lot</title>
+    <script src="https://kit.fontawesome.com/ec3c98a5c5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav id="main-nav">
+                <div class="logo">
+                    <img src="./images/logo.png" alt="Logo">
+                </div>
+                <ul>
+                    <li><a class="header-home" href="#">Rejestracja</a></li>
+                    <li><a class="about" href="#login">Logowanie</a></li>
+                    <select name="language" id="language">
+                        <option value="PL" selected>PL</option>
+                        <option value="ENG">ENG</option>
+                        <option value="DE">DE</option>
+                        <option value="ESP">ESP</option>
+                    </select> 
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="opening"><p>Zarezerwuj lot w najszybszych liniach lotniczych na świecie</p></div>
+            <div class="main">
+            <div class="content">
+            <div class="form">
+                <form action="">
+                    <div>
+                        <label for="departure">Miejsce wylotu</label>
+                        <select name="departure" id="departure" onchange="weatherDep()">
+                            <option value=""></option>
+                            <option value="Krakow">Kraków</option>
+                            <option value="Warsaw">Warszawa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="arrival">Miejsce przylotu</label>
+                        <select name="arrival" id="arrival">
+                            <option value="NowyJork">Nowy Jork</option>
+                            <option value="Tokio">Tokio</option>
+                            <option value="Sydney">Sydney</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="departureDate">Data wylotu</label>
+                    <input type="date" name="departureDate" id="today">
+                    </div>
+                    <div>
+                        <label for="passengers">Liczba pasażerów</label>
+                    <select name="passengers" id="passengers">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    </div>
+                    <div class="button"><button><a href="#">Rezerwuj</a></button></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="info">
+            <div id="date-form-1"></div>
+            <div id="showWX"></div>
+            <div id="weather-icon"><img src="icons/unknown.png" /></div>
+        </div> 
+        </div>
+        </main>
+
+        <footer>
+        <div><p>Adriana Borkowska 2021</p></div>
+        <div class="icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-youtube"></i></a>
+            <a href=""><i class="fab fa-facebook"></i></a>
+        </div>
+        </footer>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
