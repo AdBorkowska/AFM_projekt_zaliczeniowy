@@ -17,8 +17,8 @@
                     <img src="./images/logo.png" alt="Logo">
                 </div>
                 <ul>
-                    <li><a class="header-home" href="#">Rejestracja</a></li>
-                    <li><a class="about" href="#login">Logowanie</a></li>
+                    <li><a class="show-signin" href="#">Rejestracja</a></li>
+                    <li><a class="show-login" href="#">Logowanie</a></li>
                     <select name="language" id="language">
                         <option value="PL" selected>PL</option>
                         <option value="ENG">ENG</option>
@@ -27,6 +27,55 @@
                     </select> 
                 </ul>
             </nav>
+            <div class="popup" id="login">
+                <div class="close-btn" id="btn-login">&times;</div>
+                <div class="form-login">
+                    <h2>Logowanie</h2>
+                    <form action="/someuserdata" method="POST">
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Hasło</label>
+                        <input type="password" id="password" placeholder="Hasło">
+                    </div>
+                    <div class="form-element">
+                        <button>Zaloguj</button>
+                    </div>
+                    </form>
+                    <div class="form-element">
+                        <a href="#">Zapomniałeś hasła?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" id="signin">
+                <div class="close-btn" id="btn-signin">&times;</div>
+                <div class="form-login">
+                    <h2>Rejestracja</h2>
+                    <form action="/someuserdata" method="POST">
+                    <div class="form-element">
+                        <label for="username">Nazwa użytkownika</label>
+                        <input type="text" id="username" placeholder="Nazwa" required>
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Hasło</label>
+                        <input type="password" id="password" placeholder="Hasło" required>
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Powtórz hasło</label>
+                        <input type="password" id="password" placeholder="Hasło" required>
+                    </div>
+                    <div class="form-element">
+                        <label for="consent">Przeczytałem regulamin</label>
+                        <input type="checkbox" id="consent" required>
+                    </div>
+                    <div class="form-element">
+                        <button>Zarejestruj się</button>
+                    </div>
+                </form>
+                </div>
+            </div>
         </header>
 
         <main>
@@ -34,10 +83,10 @@
             <div class="main">
             <div class="content">
             <div class="form">
-                <form action="">
+                <form action="" method="POST">
                     <div>
                         <label for="departure">Miejsce wylotu</label>
-                        <select name="departure" id="departure" onchange="weatherDep()">
+                        <select name="departure" id="departure">
                             <option value=""></option>
                             <option value="Krakow">Kraków</option>
                             <option value="Warsaw">Warszawa</option>
@@ -64,7 +113,7 @@
                         <option value="4">4</option>
                     </select>
                     </div>
-                    <div class="button"><button><a href="#">Rezerwuj</a></button></div>
+                    <div class="button" id="confirm-btn"><button><a href="#">Rezerwuj</a></button></div>
                 </form>
             </div>
         </div>
@@ -72,7 +121,7 @@
         <div class="info">
             <div id="date-form-1"></div>
             <div id="showWX"></div>
-            <div id="weather-icon"><img src="icons/unknown.png" /></div>
+            <div id="weather-icon"></div>
         </div> 
         </div>
         </main>
