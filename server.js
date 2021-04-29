@@ -3,8 +3,8 @@ const app = express()
 const bodyParser = require("body-parser")
 const MongoClient = require('mongodb').MongoClient
 
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 const connectionString = `mongodb+srv://ada:ada123@cluster0.jwacu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 

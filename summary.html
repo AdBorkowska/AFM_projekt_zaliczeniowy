@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ec3c98a5c5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles-summary.css">
+</head>
+<body>
+    <div class="container">
+    <header class="header">
+        <nav id="main-nav">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Logo">
+            </div>
+            <ul>
+                <li><a class="show-signin" href="#">Rejestracja</a></li>
+                <li><a class="show-login" href="#">Logowanie</a></li>
+                <select name="language" id="language">
+                    <option value="PL" selected>PL</option>
+                    <option value="ENG">ENG</option>
+                    <option value="DE">DE</option>
+                    <option value="ESP">ESP</option>
+                </select> 
+            </ul>
+        </nav>
+        <div class="popup" id="login">
+            <div class="close-btn" id="btn-login">&times;</div>
+            <div class="form-login">
+                <h2>Logowanie</h2>
+                <form action="/someuserdata" method="POST">
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Email">
+                </div>
+                <div class="form-element">
+                    <label for="password">Hasło</label>
+                    <input type="password" id="password" placeholder="Hasło">
+                </div>
+                <div class="form-element">
+                    <button>Zaloguj</button>
+                </div>
+                </form>
+                <div class="form-element">
+                    <a href="#">Zapomniałeś hasła?</a>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="signin">
+            <div class="close-btn" id="btn-signin">&times;</div>
+            <div class="form-login">
+                <h2>Rejestracja</h2>
+                <form action="/someuserdata" method="POST">
+                <div class="form-element">
+                    <label for="username">Nazwa użytkownika</label>
+                    <input type="text" id="username" name="username" placeholder="Nazwa" required>
+                </div>
+                <div class="form-element">
+                    <label for="password">Hasło</label>
+                    <input type="password" id="password" name="password" placeholder="Hasło" required>
+                </div>
+                <div class="form-element">
+                    <label for="password">Powtórz hasło</label>
+                    <input type="password" id="password" name="password" placeholder="Hasło" required>
+                </div>
+                <div class="form-element">
+                    <label for="consent">Przeczytałem/am regulamin</label>
+                    <input type="checkbox" id="consent" required>
+                </div>
+                <div class="form-element">
+                    <button>Zarejestruj się</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </header>
+    <main>
+            <h1>Lot zarezerwowany!</h1>
+            <h3>Dziękujemy za skorzystanie z naszych usług</h3>
+            <div class="details">
+                <div><h3>Podsumowanie:</h3></div>
+                <div class="selectedItems">
+                    <div>Miejsce wylotu: <span id="departure"></span></div>
+                    <div>Miejsce przylotu: <span id="arrival"></span></div>
+                    <div>Data: <span id="date"></span></div>
+                    <div>Liczba pasażerów: <span id="passengers"></span></div>
+                    <div>Bagaż podręczny: <span id="luggage"></span></div>
+                    <div>Wybrane miejsca: <span id="seats"></span></div>
+                    <div>Cena: <span id="price"></span></div>
+                </div>
+                <div class="weather-forecast">
+                    <h4>Pogoda dla mniejsca przylotu:</h4>
+                    <div id="weather-forecast"></div>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <div><p>Adriana Borkowska 2021</p></div>
+        <div class="icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-youtube"></i></a>
+            <a href=""><i class="fab fa-facebook"></i></a>
+        </div>
+        </footer>
+    </div>
+    <script src="./summary.js"></script>
+</body>
+</html>

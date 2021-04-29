@@ -1,4 +1,4 @@
-//calendar
+//date picker
 
 const today = document.getElementById('today');
 let dateNow = new Date();
@@ -8,7 +8,8 @@ let todayMin = today.setAttribute('min', dateFormat);
 today.setAttribute('value', dateFormat);
 console.log(dateFormat);
 
-//weather
+//weather index.html
+
 
 document.getElementById("departure").addEventListener("change",function(){
     
@@ -21,8 +22,10 @@ document.getElementById("departure").addEventListener("change",function(){
             document.getElementById('weather-icon').innerHTML = `<img src="http://openweathermap.org/img/wn/${weather}@2x.png">`;
         })
     })
+    
 
-    //date & time
+//date & time
+
 let dateObj = new Date();
 let month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
 let date = ('0' + dateObj.getDate()).slice(-2);
@@ -51,12 +54,25 @@ document.querySelector("#btn-signin").addEventListener("click", function(){
     document.querySelector("#signin").classList.remove("active");
 });
 
-//popup login if not logged on
-document.getElementById("confirm-btn").addEventListener("click", function(){
-    if (a) {
 
+//popup login if not logged on
+
+
+//storing data from selection screen
+const storeSelection = (ev) => {
+    let flightData = {
+        departure: document.getElementById("departure").value,
+        arrival: document.getElementById("arrival").value,
+        departureDate: document.getElementById("departureDate"),
+        passengers: document.getElementById("passengers").value
     }
-    else {
-        
-    }
-});
+    document.forms[0].reset();
+    sessionStorage.setItem("flightSelected", JSON.stringify(flightData));
+}
+
+document.getElementById("confirm-btn").addEventListener("click", storeSelection);
+
+let storedData = JSON.parse(sessionStorage.getItem('flightSelected'))
+
+console.log(storedData.departure);
+

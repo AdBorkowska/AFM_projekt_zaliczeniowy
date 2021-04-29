@@ -68,20 +68,39 @@ a {
   border: 2px solid darkblue;
 }
 
+main {
+  background: url(./images/jumbotron.jfif);
+  background-size: cover;
+}
 .back {
-  background-color: #fafbfc;
+  align-self: flex-start;
 }
 
-main {
+#summary1 {
+  margin: 0px auto;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+  text-shadow: darkblue 2px 2px 2px;
+}
+
+.content {
   display: flex;
   justify-content: space-evenly;
-  background-color: #fafbfc;
+  align-items: center;
+  align-content: center;
 }
 
 .plane {
   margin: 20px;
-  width: 300px;
+  padding: 20px;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 70%);
+  border-radius: 5%;
 }
+
 .cockpit {
   height: 250px;
   position: relative;
@@ -142,6 +161,7 @@ ol {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  background-color: #fff;
 }
 .seat {
   display: flex;
@@ -158,10 +178,6 @@ ol {
 }
 .seat input[type=checkbox]:checked + label {
   background: #bada55;
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand;
-  animation-duration: 300ms;
-  animation-fill-mode: both;
 }
 .seat input[type=checkbox]:disabled + label {
   background: #ddd;
@@ -211,9 +227,23 @@ ol {
 }
 
 .others {
+  align-self: flex-start;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 70%);
+  height: 250px;
+  width: 250px;
+  padding: 20px;
+  font-size: 1.1rem;
+  border-radius: 5%;
+  border: 2px solid darkblue;
+}
+
+#select {
+  width: 4rem;
 }
 
 button {

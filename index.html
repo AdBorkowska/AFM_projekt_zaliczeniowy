@@ -56,18 +56,18 @@
                     <form action="/someuserdata" method="POST">
                     <div class="form-element">
                         <label for="username">Nazwa użytkownika</label>
-                        <input type="text" id="username" placeholder="Nazwa" required>
+                        <input type="text" id="username" name="username" placeholder="Nazwa" required>
                     </div>
                     <div class="form-element">
                         <label for="password">Hasło</label>
-                        <input type="password" id="password" placeholder="Hasło" required>
+                        <input type="password" id="password" name="password" placeholder="Hasło" required>
                     </div>
                     <div class="form-element">
                         <label for="password">Powtórz hasło</label>
-                        <input type="password" id="password" placeholder="Hasło" required>
+                        <input type="password" id="password" name="password" placeholder="Hasło" required>
                     </div>
                     <div class="form-element">
-                        <label for="consent">Przeczytałem regulamin</label>
+                        <label for="consent">Przeczytałem/am regulamin</label>
                         <input type="checkbox" id="consent" required>
                     </div>
                     <div class="form-element">
@@ -87,15 +87,16 @@
                     <div>
                         <label for="departure">Miejsce wylotu</label>
                         <select name="departure" id="departure">
-                            <option value=""></option>
-                            <option value="Krakow">Kraków</option>
-                            <option value="Warsaw">Warszawa</option>
+                            <option value=""selected disabled></option>
+                            <option value="Kraków">Kraków</option>
+                            <option value="Warszawa">Warszawa</option>
                         </select>
                     </div>
                     <div>
                         <label for="arrival">Miejsce przylotu</label>
                         <select name="arrival" id="arrival">
-                            <option value="NowyJork">Nowy Jork</option>
+                            <option value=""selected disabled></option>
+                            <option value="Chicago">Chicago</option>
                             <option value="Tokio">Tokio</option>
                             <option value="Sydney">Sydney</option>
                         </select>
@@ -113,15 +114,15 @@
                         <option value="4">4</option>
                     </select>
                     </div>
-                    <div class="button" id="confirm-btn"><button><a href="#">Rezerwuj</a></button></div>
+                    <div class="button" id="confirm-btn"><button><a href="./select.html">Wybór miejsca</a></button></div>
                 </form>
             </div>
         </div>
 
         <div class="info">
-            <div id="date-form-1"></div>
-            <div id="showWX"></div>
-            <div id="weather-icon"></div>
+            <div id="date-form-1" class="info-element"></div>
+            <div id="showWX" class="info-element"></div>
+            <div id="weather-icon" class="info-element"></div>
         </div> 
         </div>
         </main>
