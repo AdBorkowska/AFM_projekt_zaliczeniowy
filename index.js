@@ -1,15 +1,27 @@
 //date picker
 
-const today = document.getElementById('today');
-let dateNow = new Date();
-let dateFormat = (dateNow.getMonth()+1) <10 ? `${dateNow.getFullYear()}-0${dateNow.getMonth()+1}-${dateNow.getDate()}` : `${dateNow.getFullYear()}-${dateNow.getMonth()+1}-${dateNow.getDate()}`
-let todayMin = today.setAttribute('min', dateFormat);
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
+var yyyy = today.getFullYear();
 
-today.setAttribute('value', dateFormat);
-console.log(dateFormat);
+if (dd < 10) {
+    dd ='0'+ dd
+} 
+if (mm<10) {
+    mm = '0' + mm
+}
+
+today = yyyy +'-'+ mm +'-'+ dd;
+document.getElementById("today").setAttribute("min", today);
+
+document.getElementById("today").addEventListener("change", function() {
+    var input = this.value;
+    console.log(input);
+    sessionStorage.setItem("flightDate", JSON.stringify(input));
+});
 
 //weather index.html
-
 
 document.getElementById("departure").addEventListener("change",function(){
     
@@ -24,17 +36,24 @@ document.getElementById("departure").addEventListener("change",function(){
     })
     
 
-//date & time
+//date & time widget
 
-let dateObj = new Date();
-let month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
-let date = ('0' + dateObj.getDate()).slice(-2);
-let year = dateObj.getFullYear();
-let d = date + '/' + month;
+function getTime() {
+    let dateObj = new Date();
+    let month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
+    let date = ('0' + dateObj.getDate()).slice(-2);
+    let year = dateObj.getFullYear();
+    let d = date + '/' + month;
+    
+    let time = dateObj.getHours() + ":" + dateObj.getMinutes();
+    
+    document.getElementById("date-form-1").innerHTML = `Dziś mamy ${d}, godzina ${time}`;
+}
+setInterval(getTime, 1000);
 
-let time = dateObj.getHours() + ":" + dateObj.getMinutes();
+getTime();
 
-document.getElementById("date-form-1").innerHTML = `Dziś mamy ${d}, godzina ${time}`;
+
 
 //popup login nav
 
@@ -56,6 +75,12 @@ document.querySelector("#btn-signin").addEventListener("click", function(){
 
 
 //popup login if not logged on
+function checkLogin() {
+    
+}
+
+document.getElementById("confirm-btn").addEventListener("click", checkLogin);
+
 
 
 //storing data from selection screen
@@ -63,7 +88,6 @@ const storeSelection = (ev) => {
     let flightData = {
         departure: document.getElementById("departure").value,
         arrival: document.getElementById("arrival").value,
-        departureDate: document.getElementById("departureDate"),
         passengers: document.getElementById("passengers").value
     }
     document.forms[0].reset();
@@ -75,4 +99,3 @@ document.getElementById("confirm-btn").addEventListener("click", storeSelection)
 let storedData = JSON.parse(sessionStorage.getItem('flightSelected'))
 
 console.log(storedData.departure);
-

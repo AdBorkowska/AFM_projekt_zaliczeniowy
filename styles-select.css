@@ -1,89 +1,24 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-html {
-  font-size: 16px;
+:root {
+  --border: 2px solid darkblue;
+  --text-shadow: darkblue 2px 2px 2px;
 }
 
-.logo {
-  margin: 0.2em 0 0 0.5em;
+.logo:hover{
+  cursor: pointer;
 }
 
-.logo img {
-  height: 30px;
-  width: auto;
-  justify-self: flex-start;
-}
-
-nav li {
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.5em;
-}
-
-a {
-  text-decoration: none;
-}
-
-#main-nav {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  background-color: #4c68a0;
-}
-
-#main-nav ul {
-  font-size: 1em;
-  margin-right: 2em;
-}
-
-#main-nav a {
-  position: relative;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 0.5em;
-  color: white;
-}
-
-#main-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background-color: #9bd4eb;
-  transition: 0.4s;
-}
-
-#main-nav a:hover::after {
-  width: 100%;
-}
-
-#main-nav select {
-  background-color:#4c68a0;
-  color: white;
-  border: 2px solid darkblue;
-}
-
-main {
-  background: url(./images/jumbotron.jfif);
-  background-size: cover;
-}
 .back {
   align-self: flex-start;
 }
 
 #summary1 {
-  margin: 0px auto;
+  margin: 50px auto 0;
   width: 100%;
   padding: 0.5rem;
   text-align: center;
   color: white;
   font-size: 3em;
-  text-shadow: darkblue 2px 2px 2px;
+  text-shadow: var(--text-shadow);
 }
 
 .content {
@@ -239,43 +174,27 @@ ol {
   padding: 20px;
   font-size: 1.1rem;
   border-radius: 5%;
-  border: 2px solid darkblue;
+  border: var(--border);
 }
 
 #select {
   width: 4rem;
 }
 
-button {
-  margin-top: 20px;
-  background-color: #4c68a0;
-  color: white;
-  font-weight: 700;
-  height: 40px;
-  width: 90px;
+@media only screen and (max-width: 576px) {
+  #summary1 {
+    padding-top: 3em;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .others {
+    margin: 1rem auto 3rem;
+  }
 }
 
-button a {
-  color: white;
-}
-
-button:hover {
-  background: linear-gradient(#4c68a0, rgb(66, 63, 231));
-}
-
-footer {
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-image: url(./images/jumbotron.jfif);
-  background-size: cover;
-}
-
-footer p {
-  font-size: 0.8rem;
-}
-footer i {
-  padding: 0.3rem;
-  color: darkblue;
-}
+@media only screen and (min-width:577px) and (max-width: 1024px) {
+}  

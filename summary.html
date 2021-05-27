@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Brajanair - podsumowanie zamówienia</title>
     <script src="https://kit.fontawesome.com/ec3c98a5c5.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./shared-styles.css">
     <link rel="stylesheet" href="./styles-summary.css">
 </head>
 <body>
@@ -14,8 +15,9 @@
     <header class="header">
         <nav id="main-nav">
             <div class="logo">
-                <img src="./images/logo.png" alt="Logo">
+                <a href="./index.html"></a><img src="./images/logo.png" alt="Logo"></a>
             </div>
+            <div id="nav-links">
             <ul>
                 <li><a class="show-signin" href="#">Rejestracja</a></li>
                 <li><a class="show-login" href="#">Logowanie</a></li>
@@ -26,6 +28,7 @@
                     <option value="ESP">ESP</option>
                 </select> 
             </ul>
+        </div>
         </nav>
         <div class="popup" id="login">
             <div class="close-btn" id="btn-login">&times;</div>
@@ -78,23 +81,29 @@
         </div>
     </header>
     <main>
+        <div class="thankyou">
             <h1>Lot zarezerwowany!</h1>
             <h3>Dziękujemy za skorzystanie z naszych usług</h3>
+        </div>
             <div class="details">
                 <div><h3>Podsumowanie:</h3></div>
+                <div class="main-text">
                 <div class="selectedItems">
-                    <div>Miejsce wylotu: <span id="departure"></span></div>
-                    <div>Miejsce przylotu: <span id="arrival"></span></div>
-                    <div>Data: <span id="date"></span></div>
-                    <div>Liczba pasażerów: <span id="passengers"></span></div>
-                    <div>Bagaż podręczny: <span id="luggage"></span></div>
-                    <div>Wybrane miejsca: <span id="seats"></span></div>
-                    <div>Cena: <span id="price"></span></div>
+                    <div><strong>Miejsce wylotu: </strong><span id="departure"></span></div>
+                    <div> <strong>Miejsce przylotu: </strong><span id="arrival"></span></div>
+                    <div><strong>Data: </strong><span id="date"></span></div>
+                    <div> <strong>Liczba pasażerów: </strong><span id="passengers"></span></div>
+                    <div> <strong>Bagaż podręczny: </strong><span id="luggage"></span></div>
+                    <div> <strong>Wybrane miejsca: </strong><span id="seats"></span></div>
+                    <div> <strong>Cena:</strong> <span id="price"></span><span id="currency"></span></div>
                 </div>
-                <div class="weather-forecast">
-                    <h4>Pogoda dla mniejsca przylotu:</h4>
-                    <div id="weather-forecast"></div>
+                <div class="weather">
+                    <h4>Pogoda dla miejsca przylotu:</h4>
+                    <span id="weather-forecast"></span>
+                    <div id="weather-icon"></div>
                 </div>
+            </div>
+            <div class="ticketInfo"><h4>Bilety zostaną przesłane na maila podanego przy rejestracji</h4></div>
             </div>
     </main>
     <footer>

@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rezerwacja miejsca</title>
+    <title>Brajanair - rezerwacja miejsca</title>
     <script src="https://kit.fontawesome.com/ec3c98a5c5.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./shared-styles.css">
     <link rel="stylesheet" href="./styles-select.css">
 </head>
 <body>
     <header class="header">
         <nav id="main-nav">
             <div class="logo">
-                <img src="./images/logo.png" alt="Logo">
+                <img src="./images/logo.png" alt="Logo" onclick="confirmBack()">
             </div>
+            <div id="nav-links">
             <ul>
                 <li><a class="header-home" href="#">Rejestracja</a></li>
                 <li><a class="about" href="#login">Logowanie</a></li>
@@ -25,7 +27,57 @@
                     <option value="ESP">ESP</option>
                 </select> 
             </ul>
+        </div>
         </nav>
+        <div class="popup" id="login">
+            <div class="close-btn" id="btn-login">&times;</div>
+            <div class="form-login">
+                <h2>Logowanie</h2>
+                <form action="/someuserdata" method="POST">
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Email">
+                </div>
+                <div class="form-element">
+                    <label for="password">Hasło</label>
+                    <input type="password" id="password" placeholder="Hasło">
+                </div>
+                <div class="form-element">
+                    <button>Zaloguj</button>
+                </div>
+                </form>
+                <div class="form-element">
+                    <a href="#">Zapomniałeś hasła?</a>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="signin">
+            <div class="close-btn" id="btn-signin">&times;</div>
+            <div class="form-login">
+                <h2>Rejestracja</h2>
+                <form action="/someuserdata" method="POST">
+                <div class="form-element">
+                    <label for="username">Nazwa użytkownika</label>
+                    <input type="text" id="username" name="username" placeholder="Nazwa" required>
+                </div>
+                <div class="form-element">
+                    <label for="password">Hasło</label>
+                    <input type="password" id="password" name="password" placeholder="Hasło" required>
+                </div>
+                <div class="form-element">
+                    <label for="password">Powtórz hasło</label>
+                    <input type="password" id="password" name="password" placeholder="Hasło" required>
+                </div>
+                <div class="form-element">
+                    <label for="consent">Przeczytałem/am regulamin</label>
+                    <input type="checkbox" id="consent" required>
+                </div>
+                <div class="form-element">
+                    <button>Zarejestruj się</button>
+                </div>
+            </form>
+            </div>
+        </div>
     </header>
     <main>
         <div id="summary1"></div>
@@ -321,12 +373,12 @@
             <div class="exit exit--back fuselage"></div>
         </div>
         <div class="others">
-            <div id="summary1"></div>
             <label for="luggage">Typ bagażu:</label>
-            <select name="luggage" id="luggage">
-                <option value="5kg">Tylko podręczny (za darmo)</option>
-                <option value="10kg">10kg rejestrowany (+40 PLN)</option>
-                <option value="20kg">20kg rejestrowany (+70 PLN)</option>
+            <select name="luggage" id="luggage" required>
+                <option selected disabled></option>
+                <option value="0">Tylko podręczny (za darmo)</option>
+                <option value="40">10kg rejestrowany (+40 PLN)</option>
+                <option value="70">20kg rejestrowany (+70 PLN)</option>
             </select>
             <div class="seat-selection">
             Wybrane miejsca:
@@ -335,13 +387,13 @@
             <div class="price">
                 Cena: <span id="showPrice"></span>
                 <select id="select" name="currOptions">
-                    <option value="" selected> PLN</option>
+                    <option value="PLN"> PLN</option>
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="JPY">JPY</option>
                 </select>
             </div>
-            <button><a href="./summary.html">Rezerwuj</a></button>
+            <button onclick="allSeatsTaken()">Rezerwuj</button>
         </div>
         </div>
     </main>
