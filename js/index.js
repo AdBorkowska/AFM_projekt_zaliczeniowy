@@ -87,7 +87,15 @@ document.getElementById("confirm-btn").addEventListener("click", checkLogin);
 
 //checks whether form has been submitted
 function checkForm(){
-    window.location.href = "./select.html";
+    let storedData = JSON.parse(sessionStorage.getItem('flightSelected'));
+    let dep = storedData.departure;
+    let arr = storedData.arrival;
+    if(arr == "" || dep == ""){
+        alert("Prosimy uzupełnić formularz!")
+    }
+    else {
+        window.location.href = "./select.html";
+    }
 }
 
 document.getElementById("btn-continue").addEventListener("click", checkForm);
