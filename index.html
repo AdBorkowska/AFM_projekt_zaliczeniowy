@@ -7,8 +7,8 @@
     <title>Brajanair zarezerwuj lot</title>
     <script src="https://kit.fontawesome.com/ec3c98a5c5.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./shared-styles.css">
+    <link rel="stylesheet" href="./scss/styles-index.css">
+    <link rel="stylesheet" href="./scss/shared-styles.css">
 </head>
 <body>
     <div class="container">
@@ -86,11 +86,11 @@
             <div class="main">
             <div class="content">
             <div class="form">
-                <form action="select.html" method="POST">
+                <form method="POST">
                     <div>
                         <label for="departure">Miejsce wylotu</label>
                         <select name="departure" id="departure" required>
-                            <option value="" selected disabled></option>
+                            <option selected disabled></option>
                             <option value="Kraków">Kraków</option>
                             <option value="Warszawa">Warszawa</option>
                         </select>
@@ -98,7 +98,7 @@
                     <div>
                         <label for="arrival">Miejsce przylotu</label>
                         <select name="arrival" id="arrival" required>
-                            <option value="" selected disabled></option>
+                            <option selected disabled></option>
                             <option value="Chicago">Chicago</option>
                             <option value="Tokio">Tokio</option>
                             <option value="Sydney">Sydney</option>
@@ -117,7 +117,7 @@
                         <option value="4">4</option>
                     </select>
                     </div>
-                    <div class="button" id="confirm-btn"><button>Wybór miejsca</button></div>
+                    <div class="button" id="confirm-btn"><button class="confirm">Wybór miejsca</button></div>
                 </form>
             </div>
         </div>
@@ -127,6 +127,35 @@
             <div id="showWX" class="info-element"></div>
             <div id="weather-icon" class="info-element"></div>
         </div> 
+        </div>
+
+        <div class="popup" id="login-reminder">
+            <div class="close-btn" id="btn-login-reminder">&times;</div>
+            <div class="form-login">
+                <h2>Logowanie</h2>
+                <form action="/someuserdata" method="POST">
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Email">
+                </div>
+                <div class="form-element">
+                    <label for="password">Hasło</label>
+                    <input type="password" id="password" placeholder="Hasło">
+                </div>
+                <div class="form-element">
+                    <button>Zaloguj</button>
+                </div>
+                </form>
+                <div class="form-element">
+                    <form>
+                        <div class="form-element">
+                            <label for="email">Kontynuuj bez logowania: podaj e-mail</label>
+                            <input type="text" id="email" placeholder="Email" required>
+                        </div>
+                    </form>
+                    <button id="btn-continue">Kontynuuj</button>
+                </div>
+            </div>
         </div>
         </main>
 
@@ -140,6 +169,6 @@
         </footer>
     </div>
 
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

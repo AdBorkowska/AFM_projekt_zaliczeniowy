@@ -81,6 +81,8 @@ function calc() {
             let convertedPrice = price / data.rates[0].ask;
             convertedPrice = convertedPrice.toFixed(2);
             document.getElementById("showPrice").innerText = `${convertedPrice}`
+            sessionStorage.setItem("price", convertedPrice);
+            sessionStorage.setItem("luggage", luggagePrice);
         })
     }
     else {

@@ -7,8 +7,8 @@
     <title>Brajanair - rezerwacja miejsca</title>
     <script src="https://kit.fontawesome.com/ec3c98a5c5.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./shared-styles.css">
-    <link rel="stylesheet" href="./styles-select.css">
+    <link rel="stylesheet" href="./scss/styles-select.css">
+    <link rel="stylesheet" href="./scss/shared-styles.css">
 </head>
 <body>
     <header class="header">
@@ -393,7 +393,7 @@
                     <option value="JPY">JPY</option>
                 </select>
             </div>
-            <button onclick="allSeatsTaken()">Rezerwuj</button>
+            <button onclick="allSeatsTaken()" class="confirm">Rezerwuj</button>
         </div>
         </div>
     </main>
@@ -407,6 +407,6 @@
         </div>
     </footer>
 
-    <script src="./select.js"></script>
+    <script src="./js/select.js"></script>
 </body>
 </html>

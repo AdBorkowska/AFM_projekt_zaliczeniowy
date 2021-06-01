@@ -11,7 +11,7 @@
 }
 
 body, footer {
-    background-image: url(./images/jumbotron.jfif);
+    background-image: url(../images/jumbotron.jfif);
     background-size: cover;
 }
 
@@ -23,6 +23,7 @@ body, footer {
     height: 30px;
     width: auto;
     justify-self: flex-start;
+    cursor: pointer;
 }
 
 nav li {
@@ -189,6 +190,9 @@ button:hover {
     background: linear-gradient(#4c68a0, rgb(66, 63, 231));
 }
 
+.confirm{
+    cursor: pointer;
+}
 
 footer {
     display: flex;

@@ -16,7 +16,7 @@ today = yyyy +'-'+ mm +'-'+ dd;
 document.getElementById("today").setAttribute("min", today);
 
 document.getElementById("today").addEventListener("change", function() {
-    var input = this.value;
+    let input = this.value;
     console.log(input);
     sessionStorage.setItem("flightDate", JSON.stringify(input));
 });
@@ -53,8 +53,6 @@ setInterval(getTime, 1000);
 
 getTime();
 
-
-
 //popup login nav
 
 document.querySelector(".show-login").addEventListener("click", function(){
@@ -75,13 +73,24 @@ document.querySelector("#btn-signin").addEventListener("click", function(){
 
 
 //popup login if not logged on
-function checkLogin() {
-    
+function checkLogin(e) {
+    e.preventDefault();
+    document.querySelector("#login-reminder").classList.add("active");
+    e.preventDefault();
 }
+
+document.querySelector("#btn-login-reminder").addEventListener("click", function(){
+    document.querySelector("#login-reminder").classList.remove("active");
+});
 
 document.getElementById("confirm-btn").addEventListener("click", checkLogin);
 
+//checks whether form has been submitted
+function checkForm(){
+    window.location.href = "./select.html";
+}
 
+document.getElementById("btn-continue").addEventListener("click", checkForm);
 
 //storing data from selection screen
 const storeSelection = (ev) => {

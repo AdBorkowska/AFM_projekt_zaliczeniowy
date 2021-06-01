@@ -1,4 +1,4 @@
-const express = require("express");
+/*const express = require("express");
 const app = express()
 const bodyParser = require("body-parser")
 const MongoClient = require('mongodb').MongoClient
@@ -29,4 +29,4 @@ app.listen(8080, function() {
 console.log("Nasłuchiwanie na porcie 8080");
 })
 })
-.catch(error => console.error(error))
+.catch(error => console.error(error))*/
