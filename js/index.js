@@ -21,6 +21,54 @@ document.getElementById("today").addEventListener("change", function() {
     sessionStorage.setItem("flightDate", JSON.stringify(input));
 });
 
+//flight search
+
+function fetchFlights() {
+    let depart = document.getElementById("departure").value;
+    switch (depart){
+        case "Kraków":
+        depart = "KRK-sky";
+        break;
+        case "Warszawa":
+            depart = "WAW-sky"
+        break;
+    }
+
+    let arrive = document.getElementById("arrival").value;
+    switch(arrive){
+        case "Chicago":
+            arrive = "CHIA-sky"
+        break;
+        case "Tokio":
+            arrive = "NRT-sky"
+        break;
+        case "Sydney":
+        arrive = "SYD-sky" 
+        break;
+    }
+    console.log(depart);
+    console.log(arrive);
+    fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/PL/PLN/en_GB/${depart}/${arrive}/anytime/anytime`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "8dfd91e574msh331016455fe40c3p112dd2jsn966f55308c86",
+            "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
+        }
+    })
+    .then ((resp) => resp.json())
+    .then(function (data) {
+        let dates = data["Dates"]["InboundDates"]
+        console.log(dates)
+    })
+    .catch(err => {
+        console.error(err);
+    })
+}
+
+document.getElementById("arrival").addEventListener("change", fetchFlights);
+document.getElementById("departure").addEventListener("change", fetchFlights);
+
+
 //weather index.html
 
 document.getElementById("departure").addEventListener("change",function(){
@@ -113,6 +161,4 @@ const storeSelection = (ev) => {
 
 document.getElementById("confirm-btn").addEventListener("click", storeSelection);
 
-let storedData = JSON.parse(sessionStorage.getItem('flightSelected'))
-
-console.log(storedData.departure);
+let storedData = JSON.parse(sessionStorage.getItem('flightSelected'));
