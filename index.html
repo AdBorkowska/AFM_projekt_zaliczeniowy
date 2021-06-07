@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brajanair zarezerwuj lot</title>
+    <title>Brajanair- zarezerwuj lot</title>
     <script src="https://kit.fontawesome.com/ec3c98a5c5.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./scss/styles-index.css">
@@ -18,17 +18,17 @@
                     <a href=# id="logo"><img src="./images/logo.png" alt="Logo"></a>
                 </div>
                 <div id="nav-links">
-                <ul>
-                    <li><a class="show-signin" href="#">Rejestracja</a></li>
-                    <li><a class="show-login" href="#">Logowanie</a></li>
-                    <select name="language" id="language">
-                        <option value="PL" selected>PL</option>
-                        <option value="ENG">ENG</option>
-                        <option value="DE">DE</option>
-                        <option value="ESP">ESP</option>
-                    </select> 
-                </ul>
-            </div>
+                    <ul>
+                        <li><a class="show-signin" href="#">Rejestracja</a></li>
+                        <li><a class="show-login" href="#">Logowanie</a></li>
+                        <select name="language" id="language">
+                            <option value="PL" selected>PL</option>
+                            <option value="ENG">ENG</option>
+                            <option value="DE">DE</option>
+                            <option value="ESP">ESP</option>
+                        </select> 
+                    </ul>
+                </div>
             </nav>
             <div class="popup" id="login">
                 <div class="close-btn" id="btn-login">&times;</div>
@@ -56,27 +56,27 @@
                 <div class="close-btn" id="btn-signin">&times;</div>
                 <div class="form-login">
                     <h2>Rejestracja</h2>
-                    <form action="/someuserdata" method="POST">
-                    <div class="form-element">
-                        <label for="username">Nazwa użytkownika</label>
-                        <input type="text" id="username" name="username" placeholder="Nazwa" required>
-                    </div>
-                    <div class="form-element">
-                        <label for="password">Hasło</label>
-                        <input type="password" id="password" name="password" placeholder="Hasło" required>
-                    </div>
-                    <div class="form-element">
-                        <label for="password">Powtórz hasło</label>
-                        <input type="password" id="password" name="password" placeholder="Hasło" required>
-                    </div>
-                    <div class="form-element">
-                        <label for="consent">Przeczytałem/am regulamin</label>
-                        <input type="checkbox" id="consent" required>
-                    </div>
-                    <div class="form-element">
-                        <button>Zarejestruj się</button>
-                    </div>
-                </form>
+                    <form method="POST">
+                        <div class="form-element">
+                            <label for="username">Nazwa użytkownika</label>
+                            <input type="text" id="username" name="username" placeholder="Nazwa" required>
+                        </div>
+                        <div class="form-element">
+                            <label for="password">Hasło</label>
+                            <input type="password" id="password" name="password" placeholder="Hasło" required>
+                        </div>
+                        <div class="form-element">
+                            <label for="password">Powtórz hasło</label>
+                            <input type="password" id="password" name="password" placeholder="Hasło" required>
+                        </div>
+                        <div class="form-element">
+                            <label for="consent">Przeczytałem/am regulamin</label>
+                            <input type="checkbox" id="consent" required>
+                        </div>
+                        <div class="form-element">
+                            <button>Zarejestruj się</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </header>
@@ -84,88 +84,87 @@
         <main class="main">
             <div class="opening"><p>Zarezerwuj lot w najszybszych liniach lotniczych na świecie</p></div>
             <div class="main">
-            <div class="content">
-            <div class="form">
-                <form method="POST">
-                    <div>
-                        <label for="departure">Miejsce wylotu</label>
-                        <select name="departure" id="departure" required>
-                            <option selected disabled></option>
-                            <option value="Kraków">Kraków</option>
-                            <option value="Warszawa">Warszawa</option>
-                        </select>
+                <div class="content">
+                    <div class="form">
+                        <form method="POST">
+                            <div>
+                                <label for="departure">Miejsce wylotu</label>
+                                <select name="departure" id="departure" required>
+                                    <option selected disabled></option>
+                                    <option value="Kraków">Kraków</option>
+                                    <option value="Warszawa">Warszawa</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="arrival">Miejsce przylotu</label>
+                                <select name="arrival" id="arrival" required>
+                                    <option selected disabled></option>
+                                    <option value="Chicago">Chicago</option>
+                                    <option value="Tokio">Tokio</option>
+                                    <option value="Sydney">Sydney</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="departureDate">Data wylotu</label>
+                                <input type="date" name="departureDate" id="today" required>
+                            </div>
+                            <div>
+                                <label for="passengers">Liczba pasażerów</label>
+                                <select name="passengers" id="passengers">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                            <div class="button" id="confirm-btn"><button class="confirm">Wybór miejsca</button></div>
+                        </form>
                     </div>
-                    <div>
-                        <label for="arrival">Miejsce przylotu</label>
-                        <select name="arrival" id="arrival" required>
-                            <option selected disabled></option>
-                            <option value="Chicago">Chicago</option>
-                            <option value="Tokio">Tokio</option>
-                            <option value="Sydney">Sydney</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="departureDate">Data wylotu</label>
-                    <input type="date" name="departureDate" id="today" required>
-                    </div>
-                    <div>
-                        <label for="passengers">Liczba pasażerów</label>
-                    <select name="passengers" id="passengers">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    </div>
-                    <div class="button" id="confirm-btn"><button class="confirm">Wybór miejsca</button></div>
-                </form>
+                </div>
+                <div class="info">
+                    <div id="date-form-1" class="info-element"></div>
+                    <div id="showWX" class="info-element"></div>
+                    <div id="weather-icon" class="info-element"></div>
+                </div> 
             </div>
-        </div>
 
-        <div class="info">
-            <div id="date-form-1" class="info-element"></div>
-            <div id="showWX" class="info-element"></div>
-            <div id="weather-icon" class="info-element"></div>
-        </div> 
-        </div>
-
-        <div class="popup" id="login-reminder">
-            <div class="close-btn" id="btn-login-reminder">&times;</div>
-            <div class="form-login">
-                <h2>Logowanie</h2>
-                <form action="/someuserdata" method="POST">
-                <div class="form-element">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" placeholder="Email">
-                </div>
-                <div class="form-element">
-                    <label for="password">Hasło</label>
-                    <input type="password" id="password" placeholder="Hasło">
-                </div>
-                <div class="form-element">
-                    <button>Zaloguj</button>
-                </div>
-                </form>
-                <div class="form-element">
-                    <form>
+            <div class="popup" id="login-reminder">
+                <div class="close-btn" id="btn-login-reminder">&times;</div>
+                <div class="form-login">
+                    <h2>Logowanie</h2>
+                    <form method="POST">
                         <div class="form-element">
-                            <label for="email">Kontynuuj bez logowania: podaj e-mail</label>
-                            <input type="text" id="email" placeholder="Email" required>
+                            <label for="email">Email</label>
+                            <input type="text" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-element">
+                            <label for="password">Hasło</label>
+                            <input type="password" id="password" placeholder="Hasło">
+                        </div>
+                        <div class="form-element">
+                            <button>Zaloguj</button>
                         </div>
                     </form>
-                    <button id="btn-continue">Kontynuuj</button>
+                    <div class="form-element">
+                        <form>
+                            <div class="form-element">
+                                <label for="email">Kontynuuj bez logowania: podaj e-mail</label>
+                                <input type="text" id="email" placeholder="Email" required>
+                            </div>
+                        </form>
+                        <button id="btn-continue">Kontynuuj</button>
+                    </div>
                 </div>
             </div>
-        </div>
         </main>
 
         <footer>
-        <div><p>Adriana Borkowska 2021</p></div>
-        <div class="icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-youtube"></i></a>
-            <a href=""><i class="fab fa-facebook"></i></a>
-        </div>
+            <div><p>Adriana Borkowska 2021</p></div>
+            <div class="icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-facebook"></i></a>
+            </div>
         </footer>
     </div>
 
