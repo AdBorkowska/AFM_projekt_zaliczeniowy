@@ -75,7 +75,7 @@ function calc() {
     console.log(this.value);
     sessionStorage.setItem("currency", JSON.stringify(this.value));
     if (this.value == "USD" || this.value == "EUR" || this.value == "JPY") {
-        fetch(`http://api.nbp.pl/api/exchangerates/rates/c/${this.value}?format=json`)
+        fetch(`https://api.nbp.pl/api/exchangerates/rates/c/${this.value}?format=json`)
         .then( (resp) => resp.json())
         .then (function (data) {
             let convertedPrice = price / data.rates[0].ask;
